@@ -129,11 +129,16 @@ a:hover .con{
 	font-weight:regular;*/
 	font-weight: 500;
 }
+.box{
+	height: 100%;
+	
+	overflow: hidden;	
+}
 .movbg{
 	/*filter: opacity(70%);*/
 	filter: opacity(70%);
 	width: 100%;
-	height: auto;
+	height: 100%;
 	display: block;
 	z-index:-1;
 }

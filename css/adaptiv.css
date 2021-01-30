@@ -202,4 +202,10 @@ and (max-device-width : 700px) and (orientation : portrait)/* and (max-width: 32
 
 		transform: scale(0.8);
 	}
-}
+}	
+	@media screen and (max-height: 700px){
+		.videobox{
+			margin-top: -115vh;
+			transform: scale(0.8);
+		}
+	}
