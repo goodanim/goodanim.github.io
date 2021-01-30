@@ -208,4 +208,7 @@ and (max-device-width : 700px) and (orientation : portrait)/* and (max-width: 32
 			margin-top: -115vh;
 			transform: scale(0.8);
 		}
+		.bov{
+			transform: scale(0.7);
+		}
 	}
