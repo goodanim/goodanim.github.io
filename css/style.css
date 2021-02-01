@@ -130,8 +130,7 @@ a:hover .con{
 	font-weight: 500;
 }
 .box{
-	height: 100%;
-	
+	max-height: 100%;
 	overflow: hidden;	
 }
 .movbg{
@@ -205,7 +204,7 @@ h2{
 	transform:scale(2px);	
 }
 .h2text3>.doc{
-	width: 400px;	
+	width: 350px;	
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;

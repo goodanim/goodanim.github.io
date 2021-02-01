@@ -197,9 +197,6 @@ and (max-device-width : 700px) and (orientation : portrait)/* and (max-width: 32
 	}
 	.videobox{
 		margin-top: -70%;
-
-		
-
 		transform: scale(0.8);
 	}
 }	
