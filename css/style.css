@@ -197,14 +197,20 @@ h2{
 	text-align:center;
 	/*font-size :4.5vh;	*/
 	font-size: 2.2vw;
+	font-weight: normal;
 }
+																/*Выделение текста*/
+.h2text3>b{
+	font-weight: bold;	
+}
+
 														/*two doc*/
 .h2text3>.doc>li>a>img {
 	width: 50px;
 	transform:scale(2px);	
 }
 .h2text3>.doc{
-	width: 350px;	
+	width: 420px;	
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;
@@ -313,6 +319,8 @@ h2{
 	margin-left: auto;
     margin-right: auto;	
 }
+
+
 													/*Стили видео*/
 .boxvideo,.boxvideo2,.boxvideo3,.boxvideo4{
 	display: none;
