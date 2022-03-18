@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<!--<meta http-equiv="Refresh" content="5" />-->
+<head>
+    <style>
+html{
+    cursor: url("css/blnd_arrow.cur"),auto; 
+    height: 100%;
+}
+a{
+    cursor: url("css/blnd_link.cur"),auto;
+}
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #000000; 
+} 
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff;    
+}
+        body{
+            background: linear-gradient(90deg ,#4351DD,#35ACE0);
+            font-family: 'Roboto', sans-serif;
+            color: white;    
+        }
+        h1{
+        	margin-top: 200px;
+        	margin-bottom: 40px;
+        	text-align: center;
+        	font-size :25pt;        }
+        h2{
+        	padding: 35px;
+        	padding-top: auto;
+        	padding-bottom: auto;
+            text-align: center;
+            font-size :25pt
+        }
+        #back{
+            position: fixed;
+            margin-top: -200px;
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+        }  
+        												/*DOC PANEL*/
+#al{
+	margin-left:auto;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.doc{ 
+	list-style-type: none;
+	display:flex;
+	width: 380px;
+}
+.doc:hover img{	
+	opacity: 75%;
+	/*filter: blur( 2px );*/
+}
+a:hover .con{
+	opacity: 100%;
+	transform:scale(1.8);
+	filter: blur(0);
+}
+.doc>li>a>img{
+	width: 35px;	
+	padding-right: 10px;
+	padding-left: 10px;
+	transition-property:transform,opacity;
+	transition-duration:0.6s;
+}
+#all{
+	background: rgba(0, 0, 0, 0.7);
+	padding: 5px;
+	width: 420px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	margin-top: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 40px 2px 40px 2px;
+	transform: scale(1.3);
+}
+#tg{
+	margin-left: -50px;
+}
+b{color: #181819;
+	}
+    </style>
+</head>
+<body>
+<a href="index.html" id="back"><img src="back.svg" title="back"></a>
+<h1><br>Мы находимся на связи 24/7 без выходных и праздников.<br> Выбирите любой подходящий вам способ связи<br>И свяжитесь с нами</h1>
+<div id="all">
+<ul class="doc">
+										<li><a href="https://t.me/goodanim" target="_Ьlank"><img src="img/logo/tg.svg" class="con" id="tg"></a></li>
+										<li><a href="mailto:goodanim@mail.ru" target="_Ьlank"><img src="img/logo/mail.svg" class="con"></a></li><!--https://goodanim@mail.ru-->
+										<li><a href="https://www.messenger.com/t/sasha.arbuzov.90" target="_Ьlank"><img src="img/logo/fm.svg" class="con"></a></li>
+										<li><a href="https://vk.com/id557716967" target="_Ьlank"><img src="img/logo/vk.svg" class="con"></a></li>
+										<li><a href="https://join.skype.com/invite/bPJSM7SY5cDT" target="_Ьlank"><img src="img/logo/skype.svg" class="con"></a></li>
+										<li><a href="https://discordapp.com/users/638732672637861912" target="_Ьlank"><img src="img/logo/discord.svg" class="con"></a></li>
+										<li><a href="https://sasha-shv5276.slack.com" target="_Ьlank"><img src="img/logo/slack.svg" class="con"></a></li>
+										<li><a href="https://us05web.zoom.us/j/6658302896?pwd=SFh2bExiSUZoZFZIWWZTTGN3OWdKQT09" target="_Ьlank" class="con"><img src="img/logo/zoom.svg" class="con"></a></li>
+										<!--<li><a href=""><img src="img/logo/discord.svg" class="con"></a></li>-->
+										<!--<li><a href="https://us05web.zoom.us/s/6658302896" target="_Ьlank"><img src="img/logo/zoom.svg" class="con"></a></li>-->
+									</ul>
+</div>
+
+<h2>Телеграм: <b>goodanim</b><br>Почта: <b>goodanim@mail.ru</b></h2>
+</body>
+</html>

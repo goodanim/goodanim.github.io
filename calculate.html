@@ -1,0 +1,440 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<!--<meta http-equiv="Refresh" content="5" />-->
+<head>
+    <style>
+html{
+    cursor: url("css/blnd_arrow.cur"),auto; 
+    height: 100%;
+}
+a{
+    cursor: url("css/blnd_link.cur"),auto;
+}
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #000000; 
+} 
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff;    
+}
+        body{
+            background: linear-gradient(90deg ,#4351DD,#35ACE0);
+            font-family: 'Roboto', sans-serif;
+            color: white;    
+        }
+        #text{
+        	width: 1040px;
+        	position: absolute;
+        	left: 0;
+        	right: 0;
+        	margin: 0 auto;
+        	top: 1%;
+        }
+        h1{
+        	text-align: center;
+        }
+        h2{
+        	padding: 3%;
+        	padding-top: auto;
+        	padding-bottom: auto;
+            text-align: center;
+            font-size :22pt
+        }
+        #back{
+            position: fixed;
+            margin-top: 0px;
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+        }
+        #classic,#doodle,#isometria,#info,#shape{
+            width: 200px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            text-align: center;
+            margin-left: 7px;
+            padding-top: 20px;
+            float: left;
+
+            cursor: url("css/blnd_link.cur"),auto;
+        } 
+        #text2{
+            margin-top: 100px;
+        }
+         .slider{
+            position: relative;
+            border-radius: 8px;
+            height: 100px;
+
+         }
+         output{
+            position: absolute;
+            left: 0px;
+            top: -80px
+            padding:7px 10px;
+            size: 10px;
+            color: white;
+         }
+         #fader{
+            position: relative;
+            left: 3px
+            height:10px;
+            -webkit-appearance:none;
+            outline: none;
+         }
+         #fader::-webkit-slider-thumb{
+            -webkit-appearance:none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            box-shadow: 0 0 2px;
+         }
+         #time{
+            width: 1000px;
+            margin-top:20px;
+         }
+         #lineup{
+            padding: 10px;
+            width: 650px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+         }
+         #five-ten-sec,#ten-thirty-sec,#thirty-f-sec,#f-oneten-sec,#oneten-onethirty-sec,#onethirty-two-sec{
+            height: 40px;
+            width:100px;
+            background: rgba(0, 0, 0, 0.7);
+            padding-top: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-left: 7px;
+            float: left;
+
+            cursor: url("css/blnd_link.cur"),auto;
+         }
+
+        #speed{
+            width:620px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background: red;
+        }
+        #yesyes,#yes,#not{
+            height: 40px;
+            width:200px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            float: left;
+            margin-left: 5px;
+            text-align: center;
+            padding-top: 20px;
+
+            cursor: url("css/blnd_link.cur"),auto;
+        }
+        #calculate{
+            height: 40px;
+            width:100px;
+            background: rgba(0, 250, 0, 0.7);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            margin-top:150px;
+            text-align: center;
+            padding-top: 20px;
+            border-radius: 10px;
+
+            cursor: url("css/blnd_link.cur"),auto;
+        }
+        #text3{
+            margin-top: 60px;
+        }
+
+        #blockcalculate{
+            width: 400px;
+            height: 150px;
+            background:rgb(19 213 65);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            margin-top: -400px;
+            text-align: center;
+            font-size :42pt;
+            padding-top: 68px;
+            transition: 1s;
+        }
+        #x{
+            position: fixed;
+            margin-top: -70px;
+            margin-left: 350px;
+            transition: 1s;
+
+            cursor: url("css/blnd_link.cur"),auto;
+        }
+
+    </style>
+</head>
+<body>
+<script src="lottie.js"></script>
+<div id="back">
+<a href="index.html" id="back"><img src="back.svg" title="back"></a>
+</div>
+<div id="text">
+    <h1>Заполненение формы поможет вам определить<br> приблизительную стоимость создания ролика</h1>
+    <h2>В каком стиле хотите ролик:</h2>
+        <div id="classic">Классический</div>
+        <div id="doodle">Дудл видео</div>
+        <div id="isometria">Изометрия</div>
+        <div id="info">Инфографика</div>
+        <div id="shape">Шейповый стиль</div>
+    <div id="text2"><h2>Какой длительности вы планируете ролик:</h2></div>
+    <div id="dur">
+        <div id="lineup">
+            <div id="five-ten-sec">5-10</div>
+            <div id="ten-thirty-sec">10 - 30</div>
+            <div id="thirty-f-sec">30 - 45</div>
+            <div id="f-oneten-sec">45 - 1:00</div>
+            <div id="oneten-onethirty-sec">1:00 - 1:30 </div>
+            <div id="onethirty-two-sec">1:30 - 2:00</div>
+  </div>
+    </div>
+    <!--
+    <div class="slider">
+        <output for="fader" id="volume">0</output>
+        <input type="range" id="time" min="0" max="1000" value="0" step="1" oninput="outputUpdate(value)">
+    </div>
+-->
+    <div id="text3"><h2>Срочно вам нужен ролик?</h2></div>
+    <div id="speed">
+        <div id="yesyes">Очень срочно</div>
+        <div id="yes">Желательно побыстрей</div>
+        <div id="not">Не к спеху</div>
+    </div>
+        <div id="calculate">Посчитать</div>
+
+</div>
+<div id="blockcalculate"><div id="x">&times;</div><div id="sum">0</div></div>
+
+
+<script type="text/javascript">
+    var style = 0; 
+function funclassic() {
+    style=5000;
+    classic.style.background="rgb(19 213 65)";
+    doodle.style.background="rgba(0, 0, 0, 0.7)";
+    isometria.style.background="rgba(0, 0, 0, 0.7)";
+    info.style.background="rgba(0, 0, 0, 0.7)";
+    shape.style.background="rgba(0, 0, 0, 0.7)";
+}   
+        var classic=document.getElementById('classic')
+        classic.onclick = funclassic;
+
+function fundoodle() {
+    style=3500;
+    doodle.style.background="rgb(19 213 65)";
+    classic.style.background="rgba(0, 0, 0, 0.7)";
+    isometria.style.background="rgba(0, 0, 0, 0.7)";
+    info.style.background="rgba(0, 0, 0, 0.7)";
+    shape.style.background="rgba(0, 0, 0, 0.7)";
+}   
+        var doodle=document.getElementById('doodle')
+        doodle.onclick = fundoodle;
+
+function funisometria() {
+    style=7500;
+    isometria.style.background="rgb(19 213 65)";
+    classic.style.background="rgba(0, 0, 0, 0.7)";
+    doodle.style.background="rgba(0, 0, 0, 0.7)";
+    info.style.background="rgba(0, 0, 0, 0.7)";
+    shape.style.background="rgba(0, 0, 0, 0.7)";
+}
+        var isometria=document.getElementById('isometria')
+        isometria.onclick = funisometria;
+
+function funinfo() {
+    style=7000;
+    info.style.background="rgb(19 213 65)";
+    classic.style.background="rgba(0, 0, 0, 0.7)";
+    doodle.style.background="rgba(0, 0, 0, 0.7)";
+    isometria.style.background="rgba(0, 0, 0, 0.7)";
+    shape.style.background="rgba(0, 0, 0, 0.7)";
+}
+        var info=document.getElementById('info')
+        info.onclick = funinfo;
+
+function funshape() {
+    style=6250;
+    shape.style.background="rgb(19 213 65)";
+    classic.style.background="rgba(0, 0, 0, 0.7)";
+    doodle.style.background="rgba(0, 0, 0, 0.7)";
+    isometria.style.background="rgba(0, 0, 0, 0.7)";
+    info.style.background="rgba(0, 0, 0, 0.7)";
+}
+        var shape=document.getElementById('shape')
+        shape.onclick = funshape;
+
+                                                                                            //time
+var time = 0;
+function ten() {
+    time=1;
+    tone.style.background="rgb(19 213 65)";
+    ttwo.style.background="rgba(0, 0, 0, 0.7)";
+    ttree.style.background="rgba(0, 0, 0, 0.7)";
+    tfor.style.background="rgba(0, 0, 0, 0.7)";
+    tfive.style.background="rgba(0, 0, 0, 0.7)";
+    tsix.style.background="rgba(0, 0, 0, 0.7)";
+}   
+        var tone=document.getElementById('five-ten-sec')
+        tone.onclick = ten;
+
+function thirty() {
+    time=2;
+    ttwo.style.background="rgb(19 213 65)";
+    tone.style.background="rgba(0, 0, 0, 0.7)";
+    ttree.style.background="rgba(0, 0, 0, 0.7)";
+    tfor.style.background="rgba(0, 0, 0, 0.7)";
+    tfive.style.background="rgba(0, 0, 0, 0.7)";
+    tsix.style.background="rgba(0, 0, 0, 0.7)";
+}   
+        var ttwo=document.getElementById('ten-thirty-sec')
+        ttwo.onclick = thirty;
+
+function fifty() {
+    time=3;
+    ttree.style.background="rgb(19 213 65)";
+    tone.style.background="rgba(0, 0, 0, 0.7)";
+    ttwo.style.background="rgba(0, 0, 0, 0.7)";
+    tfor.style.background="rgba(0, 0, 0, 0.7)";
+    tfive.style.background="rgba(0, 0, 0, 0.7)";
+    tsix.style.background="rgba(0, 0, 0, 0.7)";
+}   
+        var ttree=document.getElementById('thirty-f-sec')
+        ttree.onclick = fifty;
+
+function fiftyten() {
+    time=4;
+    tfor.style.background="rgb(19 213 65)";
+    tone.style.background="rgba(0, 0, 0, 0.7)";
+    ttwo.style.background="rgba(0, 0, 0, 0.7)";
+    ttree.style.background="rgba(0, 0, 0, 0.7)";
+    tfive.style.background="rgba(0, 0, 0, 0.7)";
+    tsix.style.background="rgba(0, 0, 0, 0.7)";
+}   
+        var tfor=document.getElementById('f-oneten-sec')
+        tfor.onclick = fiftyten;
+
+function tenthirty() {
+    time=6;
+    tfive.style.background="rgb(19 213 65)";
+    tone.style.background="rgba(0, 0, 0, 0.7)";
+    ttwo.style.background="rgba(0, 0, 0, 0.7)";
+    ttree.style.background="rgba(0, 0, 0, 0.7)";
+    tfor.style.background="rgba(0, 0, 0, 0.7)";
+    tsix.style.background="rgba(0, 0, 0, 0.7)";
+}   
+        var tfive=document.getElementById('oneten-onethirty-sec')
+        tfive.onclick = tenthirty;
+
+function onetentwo() {
+    time=8;
+    tsix.style.background="rgb(19 213 65)";
+    tone.style.background="rgba(0, 0, 0, 0.7)";
+    ttwo.style.background="rgba(0, 0, 0, 0.7)";
+    ttree.style.background="rgba(0, 0, 0, 0.7)";
+    tfor.style.background="rgba(0, 0, 0, 0.7)";
+    tfive.style.background="rgba(0, 0, 0, 0.7)";
+}   
+        var tsix=document.getElementById('onethirty-two-sec')
+        tsix.onclick = onetentwo;
+
+
+                                                                    //speed
+var speed=0;
+function funyesyes() {
+    speed=1.5;
+    yesyes.style.background="rgb(19 213 65)";
+    yes.style.background="rgba(0, 0, 0, 0.7)";
+    not.style.background="rgba(0, 0, 0, 0.7)";
+}   
+        var yesyes=document.getElementById('yesyes')
+        yesyes.onclick = funyesyes;
+
+function funyes() {
+    speed=1.25;
+    yes.style.background="rgb(19 213 65)";
+    yesyes.style.background="rgba(0, 0, 0, 0.7)";
+    not.style.background="rgba(0, 0, 0, 0.7)";
+
+}   
+        var yes=document.getElementById('yes')
+        yes.onclick = funyes;
+
+function funnot() {
+    speed=1;
+    not.style.background="rgb(19 213 65)";
+    yes.style.background="rgba(0, 0, 0, 0.7)";
+    yesyes.style.background="rgba(0, 0, 0, 0.7)";
+
+}   
+        var not=document.getElementById('not')
+        not.onclick = funnot;
+
+
+                                                                    //calculate
+function fcalculate(){
+
+
+                var calculate=style*time;
+
+
+if (style>0) {
+    if (time>0) {
+        if (speed>0) {
+var zamena=document.getElementById('sum')
+zamena.textContent=calculate*speed+" ₽";
+
+blockcalculate.style.transform="translateY(700px)"; 
+body.style.filter="blur(5px)";
+back.style.filter="blur(5px)";
+
+//reset buttons color:
+    classic.style.background="rgba(0, 0, 0, 0.7)";
+    doodle.style.background="rgba(0, 0, 0, 0.7)";
+    isometria.style.background="rgba(0, 0, 0, 0.7)";
+    info.style.background="rgba(0, 0, 0, 0.7)";
+    shape.style.background="rgba(0, 0, 0, 0.7)";
+
+    tsix.style.background="rgba(0, 0, 0, 0.7)";
+    tone.style.background="rgba(0, 0, 0, 0.7)";
+    ttwo.style.background="rgba(0, 0, 0, 0.7)";
+    ttree.style.background="rgba(0, 0, 0, 0.7)";
+    tfor.style.background="rgba(0, 0, 0, 0.7)";
+    tfive.style.background="rgba(0, 0, 0, 0.7)";
+
+    not.style.background="rgba(0, 0, 0, 0.7)";
+    yes.style.background="rgba(0, 0, 0, 0.7)";
+    yesyes.style.background="rgba(0, 0, 0, 0.7)";
+}}}}
+var blockcalculate=document.getElementById('blockcalculate')
+var body=document.getElementById("text")
+var back=document.getElementById("back")
+    
+        calculate.onclick = fcalculate;
+
+
+function close(){
+style=0;
+time=0;
+speed=0;
+blockcalculate.style.transform="translateY(0px)";
+
+body.style.filter="blur(0px)";
+back.style.filter="blur(0px)";
+}
+    x.onclick = close;
+</script>
+</body>
+</html>
