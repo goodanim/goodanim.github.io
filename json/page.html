@@ -1,315 +1,186 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta charset="UTF-8">
-<!--<meta http-equiv="Refresh" content="5" />-->
 <head>
-	<link rel="icon" href="../img/logo/logo_blue.svg" type="image/svg">
-	<title>Анимация для сайто</title>
+    <link rel="icon" href="../img/logo/logo_blue.svg" type="image/svg">
+    <title>Анимация для сайто</title>
     <style>
-html{
-    cursor: url("../css/blnd_arrow.cur"),auto; 
-    height: 100%;
-}
-a{
-    cursor: url("../css/blnd_link.cur"),auto;
-}
-::-webkit-scrollbar {
-    width: 12px;
-    background-color: #000000; 
-} 
-::-webkit-scrollbar-thumb {
-    background-color: #ffffff;    
-}
-        body{
-            
-            background: linear-gradient(90deg ,#4351DD,#35ACE0);
+        html {
+            cursor: url("../css/blnd_arrow.cur"), auto; 
+            height: 100%;
+        }
+        a {
+            cursor: url("../css/blnd_link.cur"), auto;
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color:  #181819;
+                }         
+        body {
+            background: linear-gradient(90deg, #4351DD, #35ACE0);
             font-family: 'Roboto', sans-serif;
             color: white;    
+            margin: 0;
+            padding: 0;
         }
-        h1{
-        	margin-top: 40px;
-        	margin-bottom: 40px;
-        	text-align: center;
-        	
-        }
-        h2{
-        	padding: 5%;
-        	padding-top: auto;
-        	padding-bottom: auto;
+        h1 {
+            margin: 40px 0;
             text-align: center;
-            font-size :28pt
         }
-        h3{
-            margin-top: -20px;
-            padding-top: auto;
-            padding-bottom: auto;
+        h2, h3 {
             text-align: center;
-            font-size :20pt
+            font-size: 20pt;
+            margin: 10px 0;
         }
-        .all{
-            padding: auto;
-            left: 0;
-            right: 0;
+        h2{            
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 30px;
+            padding: 25 2 25 2%
+        }
+
+        .container {
+            max-width: 1400px;
             margin: 0 auto;
-            transform: scale(85%);
-            margin-top: -400px;
-            margin-left: 0px;
-
+            padding: 0 20px;
         }
-        .one{
-        	position: static;
-        	width: 1800px;
-        	height: 700px;
-        	margin: auto;
+        .section {
+  display: flex;
+  align-items: center; /* Вертикальное выравнивание по центру всего блока */
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  /*border: 1px solid #eee;
+  border-radius: 8px;
+  box-sizing: border-box;*/
         }
-        #capylab{
-           	position: static;
-            width:700px;
-            width: 650px;
-            margin-left: 50px;
-            height:700px;
-            float: left;
+        .section > div {
+            margin: 10px 0;
         }
-        #capylabtext{
-            width:950px;
-            margin-top: 10%;
-            margin-bottom: 10%;
-            background: rgba(0, 0, 0, 0.7);       
-            float: right;
-            border-radius: 30px;
+        #text_box{
+            margin: 20px 0;
+            max-height: 1%;
+            margin-left: 5%;
+          flex: 1; /* Занимает оставшееся пространство справа */
+          justify-content: center; /* Прижимаем текст к правому краю */
         }
-        .two{
-        	width: 1800px;
-        	height: 600px;
-        	margin: auto;
+        #json_box{
+            max-width: 30%;
+              flex: 0 0 auto; /* Не сжимается и не расширяется, занимает свою ширину */
+  margin-right: 20px; /* Отступ справа от картинки (можно убрать, если отступы задаются inline) */
+  display: flex;
+    justify-content: center;
+    
         }
-        #po{
-        	margin:5%;
-        	margin-left: 150px;
-           	position: static;
-            width:450px;
-            height:450px;
-            float: left;
+        #codart{max-width: 75%;}
+        #net{min-width: 180%;}#nettext{padding: 15%;}
+        #doc{min-width: 160%;}#doctext{max-width: 90%;margin: auto;}
+        #phone{max-width: 75%;}
+        #year{
+            margin-top:3%;
+            padding-bottom: 1.2%;
+            text-align:center;
         }
-        #potext{
-            width:950px;
-            margin-top: 10%;
-            margin-bottom: 10%;
-            background: rgba(0, 0, 0, 0.7);       
-            float: right;
-            border-radius: 30px;
-        }
-        .tree{
-        	width: 1800px;
-        	height: 900px;
-        	margin: auto;
-        }
-        #phone{
-            width:350px;
-            float: left;
-            margin-left: -500px;
-      
-        }
-        #phonetext{
-            width:950px;
-            margin-top: 15%;
-            margin-bottom: 15%;
-            background: rgba(0, 0, 0, 0.7);       
-            float: right;
-            border-radius: 30px;
-        }
-        .for{
-        	width: 1800px;
-        	height: 700px;
-        	margin: auto;
-        }
-        #ata{
-            width:700px;
-            float: left;
-            margin-top:50px; 
-        }
-        #atatext{
-            width:950px;
-            margin-top: 15%;
-            margin-bottom: 15%;
-            background: rgba(0, 0, 0, 0.7);       
-            float: right;
-            border-radius: 30px;
-
-        }   
-        .five{
-        	width: 1800px;
-        	height: 500px;
-        	margin: auto;
-        }
-        #HandmadeCo{
-            width:500px;
-            float: left;            
-      		margin-top: 0px;
-      		margin-left: 5%;
-        }
-        #HandmadeCotext{
-            width:950px;
-            margin-top: 3%;
-            margin-bottom: 15%;
-            background: rgba(0, 0, 0, 0.7);       
-            float: right;
-            border-radius: 30px;
-        }
-        .six{
-        	width: 1800px;
-        	height: 500px;
-        	margin: auto;
-        }
-        #codart{
-            width:350px;
-            float: left;            
-      		margin-left: 9%;
-        }
-        #codarttext{
-            width:950px;
-            margin-top: 3%;
-            margin-bottom: 15%;
-            background: rgba(0, 0, 0, 0.7);       
-            float: right;
-            border-radius: 30px;
-        }
-        .seven{
-        	width: 1800px;
-        	height: 500px;
-        	margin: auto;
-        }
-        #morph{
-            width:500px;
-            float: left;            
-      		margin-top: 0px;
-      		margin-left: 5%;
-        }
-        #morphtext{
-            width:950px;
-            margin-top: -2%;
-            margin-bottom: 0%;
-            background: rgba(0, 0, 0, 0.7);       
-            float: right;
-            border-radius: 30px;
-        }
-        #back{
+        img {
             position: fixed;
-            margin-top: -30px;
-            width: 100px;
-            height: 100px;
+            top: 10px;
+            left: 10px;
             z-index: 1;
-        }  
-        #next>img{
-            margin-top: -200px;
-            transform: rotate(180deg);
-            margin-left: 300px;
-            width: 100px;
-            height: 100px;
-        } 
-        .eight{
-        	width: 1800px;
-        	height: 500px;
-        	margin: auto;
-        }         
-         #net{
-            width:900px;
-            float: left;            
-      		margin-top: 0px;
-      		margin-left: -4%;
-        } 
-        #nettext{
-            width:950px;
-            margin-top: 7%;
-            margin-bottom: 0%;
-            background: rgba(0, 0, 0, 0.7);       
-            float: right;
-            border-radius: 30px;
-        } 
-        .nine{
-        	width: 1800px;
-        	height: 500px;
-        	margin: auto;
-        	margin-top: 90px;
-        }         
-         #doc{
-            width:800px;
-            float: left;            
-      		margin-top: 0px;
-      		margin-left: -4%;
-        } 
-        #doctext{
-            width:950px;
-            margin-top: 6%;
-            margin-bottom: 0%;
-            background: rgba(0, 0, 0, 0.7);       
-            float: right;
-            border-radius: 30px;
-        }        
-        #unica{
-		color:  white;
-		text-decoration: none
-        }   
-        #unica:hover{
-	color:  #181819;
-}         
+            max-width: 4%;
+            max-height: 6%;
+        }
+        /*img{display: none;}/*Видимость кнопки Назад*/
+        @media (min-width: 768px) {
+            .section {
+                flex-direction: row;
+            }
+            .section > div {
+                /*flex: 1;*/
+                margin: 0 10px;
+            }
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 15pt;
+            }
+            h3 {
+                font-size: 18pt;
+            }
+            img{display: none;}
+
     </style>
 </head>
 <body>
-<script src="lottie.js"></script>
-<a href="../index.html" id="back"><img src="back.svg" title="back"></a>
-<!--<h1>JSON Анимация</h1>-->
-<h1>Создаём и размещаем на сайтах, векторную анимацию.</h1><h3>На сегодняшний день,самым передовым форматом векторной анимации<br> для сайтов является JSON(Lottie) формат,также создаём<br> в SVG,HTML,в растровых APNG,GIF,webm и других форматах.</h3>
-<div class="all">
-<div class="one">
-	<div id="capylab"></div>
-	<div id="capylabtext"><h2>Задача была анимировать копибару<br>с возмущённой мордашкой,<br>Поворот головы и набирание на клавиатуре.<br>Работа выполнена для IT компании CapyLab. Используется на сайте и в приложении.</h2></div>
-</div>
+    <div id="back"><a href="../index.html" id="back"><img src="back.svg" title="back"></a></div>
+    <div class="container">
+        <h1>Создаём и размещаем на сайтах, векторную анимацию.</h1>
+        <h3>На сегодняшний день, самым передовым форматом векторной анимации<br> для сайтов является JSON(Lottie) формат, также создаём<br> в SVG, HTML, в растровых APNG, GIF, webm и других форматах.</h3>
+        
+        <div class="section">
+            <div id="json_box"><div id="capylab"></div></div>
+                <div id="text_box">
+                <div id="capylabtext"><h2>Задача была анимировать копибару<br>с возмущённой мордашкой,<br>Поворот головы и набирание на клавиатуре.<br>Работа выполнена для IT компании CapyLab. Используется на сайте и в приложении.</h2></div>
+                </div>
+        </div>
 
-<div class="two">
-	<div id="po"></div>
-	<div id="potext"><h2>Цель была, сделать удивление у медведя</h2></div>
-</div>
-<div class="tree">
-	<div id="phone"></div>
-	<div id="phonetext"><h2>Анимация экрана телефона,как в iPhone. Появление сообщений.<br>JSON устанавливался на webflow сайте.</h2></div>
-</div>
-<div class="eight">
-	<div id="net"></div>
-	<div id="nettext"><h2>Анимация для сайта: <a href="http://unikatest.unikatest.site" id="unica" target="_blank">Unika</a> <br></h2></div>
-</div>
-<div class="nine">
-	<div id="doc"></div>
-	<div id="doctext"><h2>Анимация документов, какие нужно приложить, для сайта на WP<br></h2></div>
-</div>
-<div class="for">
-	<div id="ata"></div>
-	<div id="atatext"><h2>Анимация логотипа для компании занимающейся изготовлением солнечных батарей<br></h2></div>
-</div>
-<div class="five">
-<div id="HandmadeCo"></div>
-	<div id="HandmadeCotext"><h2>Строковое появление текста.<br> Используется на сайте как прелоадер. <br></h2></div>
-</div>
-<div class="six">
-	<div id="codart"></div>
-	<div id="codarttext"><h2>Анимация логотипа для компании codart.pro<br></h2></div>
-</div>
-<div class="seven">
-	<div id="morph"></div>
-	<div id="morphtext"><h2>Морфинг анимация логотипа для сайта на Tilda<br></h2></div>
-</div>
-</div>
-<!--<a href="whale.html" id="next"><img src="back.svg" title="next"></a>-->
+        <div class="section">
+            <div id="json_box"><div id="po"></div></div>
+                <div id="text_box">
+                <div id="potext"><h2>Цель была, сделать удивление у медведя</h2></div>
+                </div>
+        </div>
 
-<script src="phone.json"></script>
-<script src="codart.json"></script>
-<script src="capylab.json"></script>
-<script src="po.json"></script>
-<script src="net.json"></script>
-<script src="doc.json"></script>
-<script src="cit.json"></script>
-<script src="ata.json"></script>
-<script src="HandmadeCo.json"></script>
-<script src="morph.json"></script>
-</div>
+        <div class="section">
+            <div id="json_box"><div id="phone"></div></div>
+                <div id="text_box">
+                <div id="phonetext"><h2>Анимация экрана телефона, как в iPhone. Появление сообщений.<br>JSON устанавливался на webflow сайте.</h2></div>
+                </div>
+        </div>
+
+        <div class="section">
+            <div id="json_box"><div id="net"></div></div>
+            <div id="text_box"><div id="nettext"><h2>Анимация для сайта: <a href="http://unikatest.unikatest.site" id="unica" target="_blank">Unika</a> <br></h2></div></div>
+        </div>
+
+        <div class="section">
+            <div id="json_box"><div id="doc"></div></div>
+            <div id="text_box"><div id="doctext"><h2>Анимация документов, какие нужно приложить, для сайта на WP<br></h2></div></div>
+        </div>
+
+        <div class="section">
+            <div id="json_box"><div id="ata"></div></div>
+            <div id="text_box"><div id="atatext"><h2>Анимация логотипа для компании, занимающейся изготовлением солнечных батарей<br></h2></div></div>
+        </div>
+               <div class="section">
+            <div id="json_box"><div id="HandmadeCo"></div></div>
+            <div id="text_box"><div id="HandmadeCotext"><h2>Строковое появление текста.<br> Используется на сайте как прелоадер. <br></h2></div></div>
+        </div>
+
+        <div class="section">
+            <div id="json_box"><div id="codart"></div></div>
+                <div id="text_box"><div id="codarttext"><h2>Анимация логотипа для компании codart.pro<br></h2></div></div>
+        </div>
+
+        <div class="section">
+            <div id="json_box"><div id="morph"></div></div>
+            <div id="text_box"><div id="morphtext"><h2>Морфинг анимация логотипа для сайта на Tilda<br></h2></div></div>
+        </div>
+    </div>
+<h3><div id="year">2025</div></h3>
+<script type="text/javascript">
+    var data=new Date().getFullYear();
+    var year=document.getElementById("year").textContent='©GoodAnim '+data;
+</script>
+    <script src="lottie.js"></script>
+    <script src="phone.json"></script>
+    <script src="codart.json"></script>
+    <script src="capylab.json"></script>
+    <script src="po.json"></script>
+    <script src="net.json"></script>
+    <script src="doc.json"></script>
+    <script src="cit.json"></script>
+    <script src="ata.json"></script>
+    <script src="HandmadeCo.json"></script>
+    <script src="morph.json"></script>
 </body>
 </html>
+
