@@ -1,17 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta charset="UTF-8">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RW8YFW4ZC8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RW8YFW4ZC8');
-</script>
     <link rel="icon" href="../img/logo/logo_blue.svg" type="image/svg">
-    <title>Анимация для сайто</title>
+    <title>Анимация для сайтов</title>
     <style>
         html {
             cursor: url("../css/blnd_arrow.cur"), auto; 
@@ -33,64 +24,155 @@
             padding: 0;
         }
         h1 {
-            margin: 40px 0;
+            margin: 22px 0;
             text-align: center;
+            font-size: 15pt;
+
         }
         h2, h3 {
             text-align: center;
-            font-size: 20pt;
             margin: 10px 0;
-        }
-        h2{            
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 30px;
-            padding: 25 2 25 2%
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .section {
-  display: flex;
-  align-items: center; /* Вертикальное выравнивание по центру всего блока */
-  width: 90%;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-  /*border: 1px solid #eee;
-  border-radius: 8px;
-  box-sizing: border-box;*/
-        }
-        .section > div {
-            margin: 10px 0;
-        }
-        #text_box{
-            margin: 20px 0;
-            max-height: 1%;
-            margin-left: 5%;
-          flex: 1; /* Занимает оставшееся пространство справа */
-          justify-content: center; /* Прижимаем текст к правому краю */
-        }
-        #json_box{
-            max-width: 30%;
-              flex: 0 0 auto; /* Не сжимается и не расширяется, занимает свою ширину */
-  margin-right: 20px; /* Отступ справа от картинки (можно убрать, если отступы задаются inline) */
-  display: flex;
-    justify-content: center;
+h2 {
+    font-size: 10pt; /* Уменьшаем шрифт, чтобы влез */
+    margin: 0;
+    margin-top: 10px; 
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px; /* Уменьшаем радиус скругления */
+    padding: 5px 10px; /* Меньший padding для экономии места */
+    /* Добавляем flex-grow: 1, чтобы h2 заполнял доступное пространство по высоте */
+    display: flex;
+    align-items: center; /* Центрируем текст вертикально внутри h2 */
+    justify-content: center; /* Центрируем текст горизонтально внутри h2 */
+    height: 100%; /* Занимает всю высоту #text_box */
+    box-sizing: border-box;
+}
+
+/* Удаляем Grid-стили из .container, он остается центрирующим общим блоком */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* НОВЫЙ КОНТЕЙНЕР ДЛЯ СЕТКИ */
+#portfolio-grid {
+    /* Используем Grid */
+    display: grid; 
+    /* 4 колонки с фиксированной шириной 300px. */
+    /* repeat(4, 300px) устанавливает 4 колонки по 300px. */
+    /* Если 1400px - max-width контейнера, то 4*300=1200px, что хорошо вписывается. */
+    grid-template-columns: repeat(4, 300px); 
+    gap: 20px; /* Отступ между элементами сетки */
+    margin: 40px auto; /* Центрируем сетку в контейнере */
+    justify-content: center; /* Центрируем, если общее пространство больше 1200px */
+}
+
+/* 2. Настраиваем Элемент Сетки (фиксированный квадратный размер) */
+.section {
+    /* Задаем фиксированные размеры и делаем его квадратным */
+    width: 300px; 
+    height: 300px; 
     
+    /* Сохраняем вертикальное расположение элементов внутри */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 10px;
+    box-sizing: border-box; /* Внутренние отступы (padding) включаются в общую высоту/ширину 300px */
+    
+    /* Добавляем скрытие всего, что выходит за границы квадрата */
+    /*overflow: hidden; */
+}
+.section > div {
+    margin: 0; /* Удаляем лишние отступы внутри секции */
+}
+
+/* Стили для блока примера */
+#json_box, #imageContainer {
+    /* Даем блоку примера 70% высоты для размещения над текстом */
+    height: 70%;
+    width: 100%;
+    /* Обеспечиваем, чтобы контент внутри центрировался и не выходил за границы */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*overflow: hidden;*/ /* Скрываем, если анимация слишком большая */
+}
+
+/* 4. Настройка блока текста внутри .section */
+#text_box {
+    /* Даем блоку текста 30% высоты (70% + 30% = 100% от 300px) */
+    height: 30%;
+    width: 100%;
+    margin: 0; 
+    flex: none; 
+    text-align: center;
+    padding: 0 5px; 
+    box-sizing: border-box;
+}
+
+/* Уменьшенный шрифт для текста (h2) */
+
+        #imageContainer{
+                position: relative;
+                display: flex;
+min-width: 100%;
+                /*width: 350px;
+                margin-top: 25%;
+                margin-bottom: 400px;*/
+
+
         }
+        #capylab {
+            /*position: absolute;*/
+            height: 135%;
+            transition: opacity 0.5s ease; /* Плавный переход */
+            padding-top: 10%;
+        }
+        #capylabstroke {
+            opacity: 0; /* Скрываем вторую картинку по умолчанию */
+            height: 135%;
+            position: absolute;
+             transition: opacity 0.5s ease;
+             padding-top: 10%;
+        }
+
+        #imageContainer:hover #capylab {
+
+            opacity: 0; /* Скрываем первую картинку при наведении */
+        }
+
+        #imageContainer:hover #capylabstroke {
+            opacity: 1; /* Показываем вторую картинку при наведении */
+        }
+
         #codart{max-width: 75%;}
-        #net{min-width: 180%;}#nettext{padding: 15%;}
+        #net{min-width: 180%;}#nettext{/*padding: 15%;*/}
         #doc{min-width: 160%;}#doctext{max-width: 90%;margin: auto;}
         #phone{max-width: 75%;}
+        #McKenzie{height: 150%;
+        transition: opacity 0.5s ease;}
+        #McKenzie_color {
+            opacity: 0; /* Скрываем вторую картинку по умолчанию */
+            height: 150%;
+            position: absolute;
+             transition: opacity 0.5s ease;
+        }
+        #imageContainer:hover #McKenzie {
+            opacity: 0; /* Скрываем первую картинку при наведении */
+        }
+        #imageContainer:hover #McKenzie_color {
+            opacity: 1; /* Показываем вторую картинку при наведении */
+        }
+        #goodanim{width: 100%;}
         #year{
             margin-top:3%;
             padding-bottom: 1.2%;
             text-align:center;
         }
-        img {
+        #backimg {
             position: fixed;
             top: 10px;
             left: 10px;
@@ -98,36 +180,76 @@
             max-width: 4%;
             max-height: 6%;
         }
-        img{display: none;}/*Видимость кнопки Назад*/
-        @media (min-width: 768px) {
-            .section {
-                flex-direction: row;
-            }
-            .section > div {
-                /*flex: 1;*/
-                margin: 0 10px;
-            }
-        @media (max-width: 768px) {
-            h2 {
-                font-size: 15pt;
-            }
-            h3 {
-                font-size: 18pt;
-            }
-            img{display: none;}
+#icons {
+    display: flex; /* Включаем Flexbox */
+    flex-wrap: wrap; /* Позволяем иконкам переноситься на новую строку, если не хватает места */
+    justify-content: center; /* Центрируем иконки по горизонтали */
+    align-items: center; /* Центрируем иконки по вертикали (если рядов несколько) */
+
+}
+        #icon_1_svg,#icon_2_svg,#icon_3_svg,#icon_4_svg,#icon_5_svg,#icon_6_svg,#icon_7_svg,#icon_8_svg,#icon_9_svg{
+
+max-width: 26%;
+
+        }
+
+        /*img{display: none;}/*Видимость кнопки Назад*/
+/* Для экранов меньше 1200px - 3 колонки */
+@media (max-width: 1380px) { /* Начинаем менять, когда 1400px container становится тесным */
+    #portfolio-grid {
+        grid-template-columns: repeat(3, 300px); /* 3 колонки */
+    }
+        h1, h3 { 
+            font-size: 11pt;
+            margin: 10px;
+        }
+}
+@media (max-width: 950px) {
+    #portfolio-grid {
+        grid-template-columns: repeat(2, 300px); /* 2 колонки */
+    }
+        h1, h3 { 
+            font-size: 11pt;
+            margin: 10px;
+        }
+}
+@media (max-width: 650px) {
+    #portfolio-grid {
+        /* Меняем на 1 колонку, уменьшаем размер квадрата */
+        grid-template-columns: 1fr; /* Одна колонка, занимает всю доступную ширину */
+        gap: 15px;
+    }
+    .section {
+        width: 100%; /* Растягиваем на всю ширину */
+        /* Используем аспектное соотношение для сохранения квадрата, если ширина неизвестна */
+        height: auto; 
+        aspect-ratio: 1 / 1; 
+    }
+    h2 { 
+        font-size: 9pt;
+    }
+    h1, h3 { 
+            font-size: 11pt;
+            margin: 10px;
+        }
+    #text_box{
+        height: 15%;
+    }
+}
+            #backimg{display: none;}
 
     </style>
 </head>
 <body>
-    <div id="back"><a href="../index.html" id="back"><img src="back.svg" title="back"></a></div>
+    <div id="back"><a href="../index.html" id="back"><img src="back.svg" title="back" id="backimg"></a></div>
     <div class="container">
-        <h1>Создаём и размещаем на сайтах, векторную анимацию.</h1>
-        <h3>На сегодняшний день, самым передовым форматом векторной анимации<br> для сайтов является JSON(Lottie) формат, также создаём<br> в SVG, HTML, в растровых APNG, GIF, webm и других форматах.</h3>
-        
+        <h1>Создаём и размещаем на сайтах, векторную анимацию</h1>
+        <h3>На сегодняшний день, самым передовым форматом векторной анимации<br> для сайтов является JSON(Lottie) формат, также создаём<br> в SVG, HTML В растровых: APNG, GIF, webm и других форматах.</h3>
+         <div id="portfolio-grid">
         <div class="section">
-            <div id="json_box"><div id="capylab"></div></div>
+            <div id="json_box"><div id="imageContainer"><div id="capylab"></div><div id="capylabstroke"></div></div></div>
                 <div id="text_box">
-                <div id="capylabtext"><h2>Задача была анимировать копибару<br>с возмущённой мордашкой,<br>Поворот головы и набирание на клавиатуре.<br>Работа выполнена для IT компании CapyLab. Используется на сайте и в приложении.</h2></div>
+                <div id="capylabtext"><h2>Работа выполнена для IT компании CapyLab. Используется на сайте и в приложении.</h2></div>
                 </div>
         </div>
 
@@ -141,7 +263,7 @@
         <div class="section">
             <div id="json_box"><div id="phone"></div></div>
                 <div id="text_box">
-                <div id="phonetext"><h2>Анимация экрана телефона, как в iPhone. Появление сообщений.<br>JSON устанавливался на webflow сайте.</h2></div>
+                <div id="phonetext"><h2>Анимация экрана iPhone. <br>JSON устанавливался на webflow сайте.</h2></div>
                 </div>
         </div>
 
@@ -152,7 +274,7 @@
 
         <div class="section">
             <div id="json_box"><div id="doc"></div></div>
-            <div id="text_box"><div id="doctext"><h2>Анимация документов, какие нужно приложить, для сайта на WP<br></h2></div></div>
+            <div id="text_box"><div id="doctext"><h2>Анимация документов, какие нужно приложить. Для сайта на WordPress<br></h2></div></div>
         </div>
 
         <div class="section">
@@ -163,7 +285,10 @@
             <div id="json_box"><div id="HandmadeCo"></div></div>
             <div id="text_box"><div id="HandmadeCotext"><h2>Строковое появление текста.<br> Используется на сайте как прелоадер. <br></h2></div></div>
         </div>
-
+        <div class="section">
+            <div id="json_box"><div id="imageContainer"><div id="McKenzie"></div><div id="McKenzie_color"></div></div></div>
+            <div id="text_box"><div id="McKenzietext"><h2>McKenzie<br> Используется на сайте как прелоадер. <br></h2></div></div>
+        </div>
         <div class="section">
             <div id="json_box"><div id="codart"></div></div>
                 <div id="text_box"><div id="codarttext"><h2>Анимация логотипа для компании codart.pro<br></h2></div></div>
@@ -173,6 +298,20 @@
             <div id="json_box"><div id="morph"></div></div>
             <div id="text_box"><div id="morphtext"><h2>Морфинг анимация логотипа для сайта на Tilda<br></h2></div></div>
         </div>
+        <div class="section">
+            <div id="json_box"><div id="icons">
+                <img src="Services/geo.svg" id="icon_1_svg"><img src="Services/phone.svg" id="icon_2_svg"><img src="Services/calendar.svg" id="icon_3_svg">
+                <img src="Services/7_breketi.svg" id="icon_4_svg"><img src="Services/eye.svg" id="icon_5_svg"><img src="Services/microskop.svg" id="icon_6_svg">
+                <img src="Services/zmist.svg" id="icon_7_svg"><img src="Services/9_vidb.svg" id="icon_8_svg"><img src="Services/8.svg" id="icon_9_svg">
+            </div></div>
+            <div id="text_box"><div id="morphtext"><h2>SVG иконки для стоматологического сайта<br></h2></div></div>
+        </div>
+        <div class="section">
+            <div id="json_box"><div id="goodanim"></div></div>
+            <div id="text_box"><div id="goodanimtext"><h2>GoodAnim<br></h2></div></div>
+        </div>
+        
+
     </div>
 <h3><div id="year">2025</div></h3>
 <script type="text/javascript">
@@ -182,14 +321,19 @@
     <script src="lottie.js"></script>
     <script src="phone.json"></script>
     <script src="codart.json"></script>
-    <script src="capylab.json"></script>
+    <script src="capylabcolor.json"></script>
+    <script src="capylabstroke.json"></script>
     <script src="po.json"></script>
     <script src="net.json"></script>
     <script src="doc.json"></script>
     <script src="cit.json"></script>
     <script src="ata.json"></script>
     <script src="HandmadeCo.json"></script>
+    <script src="McKenzie.json"></script>
+    <script src="McKenzie_color.json"></script>
     <script src="morph.json"></script>
+    <script src="ga.json"></script>
+    <script src="goodanim.json"></script>
 </body>
 </html>
 
